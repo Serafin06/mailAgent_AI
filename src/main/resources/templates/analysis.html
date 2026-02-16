@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Analiza Emaili</title>
+</head>
+<body>
+<h1>Analiza Nieprzeczytanych Emaili</h1>
+<div th:each="result : ${results}">
+    <h3 th:text="${result.first.subject}">Subject</h3>
+    <p><strong>Od:</strong> <span th:text="${result.first.from}">From</span></p>
+    <p><strong>Data:</strong> <span th:text="${result.first.receivedDate}">Date</span></p>
+    <pre th:text="${result.second}">Analysis</pre>
+    <hr/>
+</div>
+</body>
+</html>
