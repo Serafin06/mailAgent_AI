@@ -24,21 +24,17 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation")
     implementation("io.ktor:ktor-server-thymeleaf")
     implementation("io.ktor:ktor-server-netty")
-    implementation("ch.qos.logback:logback-classic:$logback_version")
     implementation("io.ktor:ktor-server-config-yaml")
+    implementation("ch.qos.logback:logback-classic:$logback_version")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:${ktor_version}")
+
+    // LangChain4j
+    implementation("dev.langchain4j:langchain4j:0.36.2")
+    implementation("dev.langchain4j:langchain4j-ollama:0.36.2")
+
+    // Mail
+    implementation("org.eclipse.angus:angus-mail:2.0.3")
+
     testImplementation("io.ktor:ktor-server-test-host")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
-
-    // Klient do komunikacji z API Ollamy
-    implementation("io.ktor:ktor-client-core:${ktor_version}")
-    implementation("io.ktor:ktor-client-cio:${ktor_version}") // Lekki silnik CIO
-    implementation("io.ktor:ktor-client-content-negotiation:${ktor_version}")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:${ktor_version}")
-
-    // Obsługa maili (Jakarta Mail API)
-    implementation("org.eclipse.angus:angus-mail:2.0.3")
-    implementation("org.eclipse.angus:jakarta.mail:2.0.1")
-
-    // Serializacja JSON
-    implementation("io.ktor:ktor-serialization-kotlinx-json:${ktor_version}")
 }
